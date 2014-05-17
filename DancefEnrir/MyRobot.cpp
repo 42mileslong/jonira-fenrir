@@ -6,7 +6,6 @@
  * The IterativeRobot class is the base of a robot application that will automatically call your
  * Periodic methods for each packet based on the mode.
  */ 
-
 	
 /**
  * Robot-wide initialization code should go here.
@@ -131,11 +130,6 @@ void RobotdEmo::TestInit() {
  */
 void RobotdEmo::TestPeriodic() {
 }
-
-void RobotdEmo::print(int direction, int time) {
-	std::printf("Andrew gives me this?");
-}
-};
 
 START_ROBOT_CLASS(RobotdEmo);
 

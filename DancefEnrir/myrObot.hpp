@@ -10,22 +10,19 @@
 #define PORT_DRIVE_VIC_RIGHT_BACK 2
 
 
-class RobotdEmo : public IterativeRobot
-{
+class RobotdEmo : public IterativeRobot{
 private:
 	RobotDrive myrObot;// robot drive system
 	//initialization list of Victors
 	Victor LeftvIcFront, LeftvIcbAck, RightvIcFront, RightvIcbAck;
 	
-//TODO fix broken stuff
 public:
-	//TODO getting lots of errors
-	RobotdEmo():
+	RobotdEmo();
 
-	void Drive(float speed);
 	void RobotInit();
+	void Drive(float speed);
 	void TurnOneWay(double timeTurn);
-	void TurnOtherWay((double timeTurn);
+	void TurnOtherWay(double timeTurn);
 	void DisabledInit();
 	void DisabledPeriodic();
 	void AutonomousInit();
@@ -34,9 +31,5 @@ public:
 	void TeleopPeriodic();
 	void TestInit();
 	void TestPeriodic();
-	
-	
-	myrObot.SetExpiration(0.1);
-	this->SetPeriod(0); 	//Set update period to sync with robot control packets (20ms nominal)
 };
 #endif
