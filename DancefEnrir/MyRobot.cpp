@@ -27,8 +27,16 @@ public:
  * Use this method for default Robot-wide initialization which will
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
-void RobotdEmo::RobotInit() {
-	myrObot.RobotDrive(-0.5, 0.5);
+void RobotdEmo::RobotInit() { 
+	//move forward
+	RobotdEmo.Drive(0.3);
+}
+
+void RobotdEmo::Drive(float speed) {
+	LeftvIcFront.Set(speed);
+	LeftvIcbAck.Set(speed);
+	RightvIcFront.Set(-speed);
+	RightvIcbAck.Set(-speed);
 }
 
 /**
