@@ -22,18 +22,18 @@ public:
 	//TODO getting lots of errors
 	RobotdEmo():
 
-	void Drive();
+	void Drive(float speed);
 	void RobotInit();
-	void TurnOneWay();
-	void TurnOtherWay();
-	void RobotdEmo::DisabledInit();
-	void RobotdEmo::DisabledPeriodic();
-	void RobotdEmo::AutonomousInit();
-	void RobotdEmo::AutonomousPeriodic();
-	void RobotdEmo::TeleopInit();
-	void RobotdEmo::TeleopPeriodic();
-	void RobotdEmo::TestInit();
-	void RobotdEmo::TestPeriodic();
+	void TurnOneWay(double timeTurn);
+	void TurnOtherWay((double timeTurn);
+	void DisabledInit();
+	void DisabledPeriodic();
+	void AutonomousInit();
+	void AutonomousPeriodic();
+	void TeleopInit();
+	void TeleopPeriodic();
+	void TestInit();
+	void TestPeriodic();
 	
 	
 	myrObot.SetExpiration(0.1);
