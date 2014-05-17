@@ -1,7 +1,7 @@
 #GitiGnorefOrProProgrammers
 
 
-# WindRiver-specific ignores
+# WindrIver-specific ignores
 
 .metadata/*
 */.cproject
