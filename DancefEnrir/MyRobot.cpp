@@ -8,12 +8,15 @@
  */ 
 class RobotdEmo : public IterativeRobot
 {
-	RobotDrive myrObot; 		// robot drive system
+	RobotDrive myrObot;// robot drive system
+	//initialization list of Victors
 	Victor LeftvIcFront, LeftvIcbAck, RightvIcFront, RightvIcbAck;
 	
 
 public:
 	RobotdEmo():
+	//TODO: Make a timer for autonomous
+		
 	//initialization list that saves memory
 	LeftvIcFront(PORT_DRIVE_VIC_LEFT_FRONT), LeftvIcbAck(PORT_DRIVE_VIC_LEFT_BACK), RightvIcFront(PORT_DRIVE_VIC_RIGHT_FRONT), RightvIcbAck(PORT_DRIVE_VIC_RIGHT_BACK)
 	{
@@ -27,15 +30,17 @@ public:
  * Use this method for default Robot-wide initialization which will
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
-void RobotdEmo::RobotInit() { 
+void RobotdEmo::RobotInit() {
+	//TODO: If/else based on time. Make sure to stop victors after use
+	
 	//move forward
 	RobotdEmo.Drive(0.3);
+	
 }
 
 /**
  * Sets the robot to drive in a direction with a certain speed
- * 
- * Speed between -1 and 1, percent of power of victors
+ * Speed between -1 and 1, percent of power for motors
  */
 void RobotdEmo::Drive(float speed) {
 	LeftvIcFront.Set(speed);
@@ -118,7 +123,7 @@ void RobotdEmo::TestPeriodic() {
 }
 
 void RobotdEmo::print(int direction, int time) {
-	STD::printF("Andrew gives me this?");
+	std::printf("Andrew gives me this?");
 }
 
 };
