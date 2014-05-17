@@ -30,10 +30,15 @@ public:
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
 void RobotdEmo::RobotInit() {
-
 	RobotdEmo.Drive(0.3);
 	Wait(1.0);
 	RobotdEmo.Drive(0);
+	
+	if (rand() > 0.5) {
+		RobotdEmo.TurnOneWay(rand() * 2);
+	} else {
+		RobotdEmo.TurnOtherWay(rand() * 2);
+	}
 }
 
 /**
