@@ -15,7 +15,6 @@ class RobotdEmo : public IterativeRobot
 
 public:
 	RobotdEmo():
-	//TODO: Make a timer for autonomous
 		
 	//initialization list that saves memory
 	LeftvIcFront(PORT_DRIVE_VIC_LEFT_FRONT), LeftvIcbAck(PORT_DRIVE_VIC_LEFT_BACK), RightvIcFront(PORT_DRIVE_VIC_RIGHT_FRONT), RightvIcbAck(PORT_DRIVE_VIC_RIGHT_BACK)
@@ -31,11 +30,14 @@ public:
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
 void RobotdEmo::RobotInit() {
-	//TODO: If/else based on time. Make sure to stop victors after use
-	
 	//move forward
 	RobotdEmo.Drive(0.3);
 	
+	//waits
+	Wait(1.0);
+	
+	//stops
+	RobotdEmo.Drive(0);
 }
 
 /**
@@ -125,7 +127,6 @@ void RobotdEmo::TestPeriodic() {
 void RobotdEmo::print(int direction, int time) {
 	std::printf("Andrew gives me this?");
 }
-
 };
 
 START_ROBOT_CLASS(RobotdEmo);
