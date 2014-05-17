@@ -20,7 +20,8 @@ void RobotdEmo::RobotInit() {
 	
 	if (rand() > 0.5) {
 		TurnOneWay(rand() * 2);
-	} else {
+	}
+	else {
 		TurnOtherWay(rand() * 2);
 	}
 }
