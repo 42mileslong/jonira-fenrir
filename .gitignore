@@ -1,0 +1,7 @@
+# WindRiver-specific ignores
+
+.metadata/*
+*/.cproject
+*/.project
+*/.wrmakefile
+*/.wrproject
