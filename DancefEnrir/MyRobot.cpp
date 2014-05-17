@@ -14,14 +14,10 @@ class RobotdEmo : public IterativeRobot
 
 public:
 	RobotdEmo():
-		LeftvIcFront = 5;
-		LeftvIcbAck = 6;
-		RightvIcFront = 1;
-		RightvIcbAck = 2;
+	//WAO
 	{
 		myrObot.SetExpiration(0.1);
-		this->SetPeriod(0); 	//Set update period to sync with robot control packets (20ms nominal)
-		
+		this->SetPeriod(0); 	//Set update period to sync with robot control packets (20ms nominal)	
 	}
 	
 /**
