@@ -30,13 +30,9 @@ public:
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
 void RobotdEmo::RobotInit() {
-	//move forward
+
 	RobotdEmo.Drive(0.3);
-	
-	//waits
 	Wait(1.0);
-	
-	//stops
 	RobotdEmo.Drive(0);
 }
 
@@ -49,6 +45,28 @@ void RobotdEmo::Drive(float speed) {
 	LeftvIcbAck.Set(speed);
 	RightvIcFront.Set(-speed);
 	RightvIcbAck.Set(-speed);
+}
+
+void RobotdEmo::TurnOneWay(double timeTurn) {
+	LeftvIcFront.Set(0.3);
+	LeftvIcbAck.Set(0.3);
+	RightvIcFront.Set(0.3);
+	RightvIcbAck.Set(0.3);
+	
+	Wait(timeTurn);
+	
+	RobotdEmo.Drive(0);
+}
+
+void RobotdEmo::TurnOtherWay(double timeTurn) {
+	LeftvIcFront.Set(-0.3);
+	LeftvIcbAck.Set(-0.3);
+	RightvIcFront.Set(-.3);
+	RightvIcbAck.Set(-.3);
+	
+	Wait(timeTurn);
+	
+	RobotdEmo.Drive(0);
 }
 
 /**
