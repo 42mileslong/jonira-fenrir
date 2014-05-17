@@ -6,22 +6,7 @@
  * The IterativeRobot class is the base of a robot application that will automatically call your
  * Periodic methods for each packet based on the mode.
  */ 
-class RobotdEmo : public IterativeRobot
-{
-	RobotDrive myrObot;// robot drive system
-	//initialization list of Victors
-	Victor LeftvIcFront, LeftvIcbAck, RightvIcFront, RightvIcbAck;
-	
 
-public:
-	RobotdEmo():
-		
-	//initialization list that saves memory
-	LeftvIcFront(PORT_DRIVE_VIC_LEFT_FRONT), LeftvIcbAck(PORT_DRIVE_VIC_LEFT_BACK), RightvIcFront(PORT_DRIVE_VIC_RIGHT_FRONT), RightvIcbAck(PORT_DRIVE_VIC_RIGHT_BACK)
-	{
-		myrObot.SetExpiration(0.1);
-		this->SetPeriod(0); 	//Set update period to sync with robot control packets (20ms nominal)	
-	}
 	
 /**
  * Robot-wide initialization code should go here.
@@ -30,14 +15,14 @@ public:
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
 void RobotdEmo::RobotInit() {
-	RobotdEmo.Drive(0.3);
+	Drive(0.3);
 	Wait(1.0);
-	RobotdEmo.Drive(0);
+	Drive(0);
 	
 	if (rand() > 0.5) {
-		RobotdEmo.TurnOneWay(rand() * 2);
+		TurnOneWay(rand() * 2);
 	} else {
-		RobotdEmo.TurnOtherWay(rand() * 2);
+		TurnOtherWay(rand() * 2);
 	}
 }
 
@@ -60,7 +45,7 @@ void RobotdEmo::TurnOneWay(double timeTurn) {
 	
 	Wait(timeTurn);
 	
-	RobotdEmo.Drive(0);
+	Drive(0);
 }
 
 void RobotdEmo::TurnOtherWay(double timeTurn) {
@@ -71,7 +56,7 @@ void RobotdEmo::TurnOtherWay(double timeTurn) {
 	
 	Wait(timeTurn);
 	
-	RobotdEmo.Drive(0);
+	Drive(0);
 }
 
 /**
