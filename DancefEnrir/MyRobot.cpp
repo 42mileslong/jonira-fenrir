@@ -32,6 +32,11 @@ void RobotdEmo::RobotInit() {
 	RobotdEmo.Drive(0.3);
 }
 
+/**
+ * Sets the robot to drive in a direction with a certain speed
+ * 
+ * Speed between -1 and 1, percent of power of victors
+ */
 void RobotdEmo::Drive(float speed) {
 	LeftvIcFront.Set(speed);
 	LeftvIcbAck.Set(speed);
@@ -92,7 +97,6 @@ void RobotdEmo::TeleopInit() {
  * rate while the robot is in teleop mode.
  */
 void RobotdEmo::TeleopPeriodic() {
-	myrObot.ArcadeDrive(Stick); // drive with arcade style 
 }
 
 /**
