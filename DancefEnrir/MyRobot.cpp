@@ -14,7 +14,7 @@ class RobotdEmo : public IterativeRobot
 
 public:
 	RobotdEmo():
-	//WAO
+	LeftvIcFront(PORT_DRIVE_VIC_1), LeftvIcbAck(PORT_DRIVE_VIC_2), RightvIcFront(PORT_DRIVE_VIC_2), RightvIcbAck(PORT_DRIVE_VIC_2)
 	{
 		myrObot.SetExpiration(0.1);
 		this->SetPeriod(0); 	//Set update period to sync with robot control packets (20ms nominal)	
