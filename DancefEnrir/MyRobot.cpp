@@ -28,6 +28,7 @@ public:
  * be called when the robot is first powered on.  It will be called exactly 1 time.
  */
 void RobotdEmo::RobotInit() {
+	myrObot.RobotDrive(-0.5, 0.5);
 }
 
 /**
@@ -102,6 +103,10 @@ void RobotdEmo::TestInit() {
  * rate while the robot is in test mode.
  */
 void RobotdEmo::TestPeriodic() {
+}
+
+void RobotdEmo::print(int direction, int time) {
+	STD::printF("Andrew gives me this?");
 }
 
 };
